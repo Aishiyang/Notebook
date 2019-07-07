@@ -276,17 +276,7 @@ provider://177.1.1.82:20880
 
 # **集群容错**
 
- 
-
- 
-
- 记得录屏
-
- 
-
-# **集群容错**
-
-**Fail****over cluster**  **失败的时候自动切换并重试其他服务器。 通过retries****=2****。 来设置重试次数**
+**Failover cluster**  **失败的时候自动切换并重试其他服务器。 通过retries** **=2。 来设置重试次数**
 
  
 
@@ -314,7 +304,7 @@ broadcast cluster  广播调用所有提供者，逐个调用。其中一台报�
 
  
 
-消费端有限最高 – 服务端
+消费端优先级最高 – 服务端
 
 ![img](file:///C:\Users\Wei\AppData\Local\Temp\ksohtml5668\wps11.jpg) 
 
