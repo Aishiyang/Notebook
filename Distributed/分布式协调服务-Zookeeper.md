@@ -1,4 +1,4 @@
-## Zookeeper简单介绍
+## Zookeeper
 
 #### 一、分布式协调技术
 
