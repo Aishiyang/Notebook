@@ -9,7 +9,7 @@
 
 - **Zookeeper**是一种为分布式应用所设计的高可用、高性能且一致的开源协调服务，它提供了一项基本服务：分布式锁服务。其他的使用方法：配置维护、组服务、分布式消息队列、分布式通知/协调。提供的服务主要是通过：数据结构+原语+watcher机制，三个部分来实现的。
 
-![WeChat Image_20190418165832](C:\Xingwei\Owner\Typora\Typora\Notebook\Zookeeper\images\WeChat Image_20190418165832.png)
+![WeChat Image_20190418165832](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/WeChat Image_20190418165832.png)
 
 
 

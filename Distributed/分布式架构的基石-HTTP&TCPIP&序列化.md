@@ -2,7 +2,9 @@
 
 - **Request请求**
 
-  ![1556076867(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556076867(1).jpg)
+  ![1556076867(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556076867(1).jpg)
+
+  
 
 
 
@@ -14,7 +16,9 @@
 - **HTTPS 的原理**
   由于HTTP 协议通信的不安全性，所以人们为了防止信息在传输过程中遭到泄漏或者篡改，就想出来对传输通道进行加密的方式https。https 是一种加密的超文本传输协议，它与HTTP 在协议差异在于对数据传输的过程中，https 对数据做了完全加密。由于http 协议或者https协议都是处于TCP 传输层之上，同时网络协议又是一个分层的结构，所以在tcp 协议层之上增加了一层SSL（Secure Socket Layer，安全层）或者TLS（Transport Layer Security） 安全层传输协议组合使用用于构造加密通道；
 
-​               ![1556077087(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556077087(1).jpg)
+​               ![1556077087(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556077087(1).jpg)
+
+
 
 - **HTTPS 的实现原理**
 
@@ -54,7 +58,7 @@
      a) 客户端用随机数解密并计算握手消息的HASH，如果与服务端发来的HASH 一致，此时握手过程结束，
      b) 之后所有的通信数据将由之前交互过程中生成的pre mastersecret / client.random/server.random 通过算法得出sessionKey，作为后续交互过程中的对称密钥
 
-​             ![1556077341(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556077341(1).jpg)
+​             ![1556077341(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556077341(1).jpg)
 
 
 
@@ -68,11 +72,11 @@
 
   - **三次握手**
 
-    ![1556076136756](C:\Users\xingwei.zhang\AppData\Roaming\Typora\typora-user-images\1556076136756.png)
+    ![1556076136756](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/100327002629.png)
 
   - **四次挥手**
 
-  ![1556076184(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556076184(1).jpg)
+  ![1556076184(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556076184(1).jpg)
 
 - **UDP/IP**
   UDP 协议不会对IP 层产生的错误进行修复，而是简单的扩展了IP 协议“尽力而为”的数据报文服务，使他能够在应用程序之间工作，而不是在主机之间工作，因此使用UDP协议必须要考虑到报文丢失，顺序混乱的问题
@@ -85,7 +89,7 @@
     滑动窗口（Sliding window）是一种流量控制技术。早期的网络通信中，通信双方不会考虑网络的拥挤情况直接发送数据。由于大家不知道网络拥塞状况，同时发送数据，导致中间节点阻塞掉包，谁也发不了数据，所以就有了滑动窗口机制来解决此问题；发送和接受方都会维护一个数据帧的序列，这个序列被称作窗口。
   - 简单解释下，发送和接受方都会维护一个数据帧的序列，这个序列被称作窗口。发送方的窗口大小由接受方确定，目的在于控制发送速度，以免接受方的缓存不够大，而导致溢出，同时控制流量也可以避免网络拥塞。下面图中的4,5,6 号数据帧已经被发送出去，但是未收到关联的ACK，7,8,9 帧则是等待发送。可以看出发送端的窗口大小为6，这是由接受端告知的。此时如果发送端收到4 号ACK，则窗口的左边缘向右收缩，窗口的右边缘则向右扩展，此时窗口就向前“滑动了”，即数据帧10 也可以被发送。
 
-​        ![1556076423(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556076423(1).jpg)
+​        ![1556076423(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556076423(1).jpg)
 
 
 
@@ -157,24 +161,24 @@
       假设我们定义了一个int32 字段值=296.
       **第一步，转化为2 进制编码**
 
-      ![1556177730](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556177730.jpg)
+      ![1556177730](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556177730.jpg)
 
   ​              **第二步，提取字节**
   ​              规则： 按照从字节串末尾选取7 位，并在最高位补1，构成一个字节
 
-  ![1556177774(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556177774(1).jpg)
+  ![1556177774(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556177774(1).jpg)
 
   ​              **第三步，继续提取字节**
   ​	      整体右移7 位，继续截取7 个比特位，并且在最高位补0 。因为这个是最后一个有意义的字
 
   ​              节了。补0 不影响结果
 
-  ![1556177843(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556177843(1).jpg)
+  ![1556177843(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556177843(1).jpg)
 
 ​                     **第四步，拼接成一个新的字节串**
 ​                     将原来用4 个字节表示的整数，经过varint 编码以后只需要2 个字节了。
 
-![1556177892(1)](C:\Xingwei\Owner\Typora\Typora\Notebook\Distributed\images\1556177892(1).jpg)
+![1556177892(1)](https://github.com/Aishiyang/Notebook/raw/master/Distributed/images/1556177892(1).jpg)
 
 
 
